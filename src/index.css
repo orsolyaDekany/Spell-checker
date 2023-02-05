@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+a {
+text-decoration: none;
+color: aqua;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, html {
+    background: rgb(19,134,135);
+    background: linear-gradient(0deg, rgba(19,134,135,1) 0%, rgba(28,148,174,1) 11%, rgba(28,111,161,1) 100%);
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.centerDiv {
+    padding: 1.5em 2em;
+}
+
+.centerText {
+    text-align: center;
+    margin: 0.5em;
+}
+
+.header {
+    background-color: black;
+    padding: 1em 0;
+}
+
+.inputEditorContainer {
+    flex: 1;
+    margin: 1em 3em;
+    position: relative;
+}
+
+.outputEditorContainer {
+    background-color: white;
+    border: 2px solid #ccced1;
+    box-sizing: border-box;
+    color: black;
+    flex: 1;
+    padding: 1.5em 1.5em;
+    margin: 1em 3em;
+    min-height: 30vh;
+    min-width: 50vh;
+}
+
+.parentEditorContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.textarea {
+    border: 2px solid #ccced1;
+    box-sizing: border-box;
+    min-height: 30vh;
+    min-width: 50vh;
+    padding: 2em 1.5em;
+    resize: none;
+    width: 100%;
+    height: 100%;
+}
+
+.textarea:focus + label {
+    display: none;
+  }
+
+.textarea:focus-visible {
+    outline: green solid 2px;
+}
+
+label {
+    opacity: 60%;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    color: grey;
 }
