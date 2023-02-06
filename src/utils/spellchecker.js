@@ -10,13 +10,18 @@ const isBasicEnglish = (word) => {
   return basicwordlist.has(word);
 }
 
+const removePunctuation = (word) => {
+  return word.replace(/[?.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+}
+
 // Check spell for the input
 const checkSpell = (sentence) => {
-  const words = sentence.split(' ');
+  let words = sentence.split(' ');
   let incorrectWords = [];
 
-  for (const word of words) {
-    if (!isBasicEnglish(word)) {
+  for (let word of words) {
+
+    if (!isBasicEnglish(removePunctuation((word.toLowerCase())))) {
       incorrectWords.push(word)
     }
 
