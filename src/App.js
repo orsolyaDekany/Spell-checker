@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./index.css";
 import checkSpell from "./utils/spellchecker";
 
@@ -9,19 +9,6 @@ function App() {
   const handleChange = (e) => {
     setIncorrectWords(checkSpell(e.target.value));
     setState(e.target.value);
-  };
-
-  useEffect(() => {
-    document.addEventListener("keydown", detectKeyDown, true);
-  }, []);
-
-  const detectKeyDown = (e) => {
-    const outputTextArea = document.getElementsByClassName(
-      "outputEditorContainer"
-    )[0];
-    if (e.keyCode === 32) {
-      outputTextArea.innerHTML += `<span>&nbsp;</span>`;
-    }
   };
 
   return (
@@ -61,10 +48,10 @@ function App() {
                   textDecorationStyle: "wavy",
                 }}
               >
-                {word}
+                {word + " "}
               </span>
             ) : (
-              <span key={index}>{word}</span>
+              <span key={index}>{word + " "}</span>
             );
           })}
         </div>
